@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/EnemyDie.wav-a486c87c5ffce10facfdaf6e118ee22d.sample"
+type="AudioStreamWAV"
+uid="uid://dedr1ba7my8l2"
+path="res://.godot/imported/EnemyDie.wav-a486c87c5ffce10facfdaf6e118ee22d.sample"
 
 [deps]
 
 source_file="res://Music and Sounds/EnemyDie.wav"
-dest_files=[ "res://.import/EnemyDie.wav-a486c87c5ffce10facfdaf6e118ee22d.sample" ]
+dest_files=["res://.godot/imported/EnemyDie.wav-a486c87c5ffce10facfdaf6e118ee22d.sample"]
 
 [params]
 

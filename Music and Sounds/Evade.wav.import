@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/Evade.wav-cd612618661f05b5e39dccebc8901a0b.sample"
+type="AudioStreamWAV"
+uid="uid://qqh2of4h8qfs"
+path="res://.godot/imported/Evade.wav-cd612618661f05b5e39dccebc8901a0b.sample"
 
 [deps]
 
 source_file="res://Music and Sounds/Evade.wav"
-dest_files=[ "res://.import/Evade.wav-cd612618661f05b5e39dccebc8901a0b.sample" ]
+dest_files=["res://.godot/imported/Evade.wav-cd612618661f05b5e39dccebc8901a0b.sample"]
 
 [params]
 
