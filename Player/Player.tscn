@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bw45pw4n4vw3"]
+[gd_scene load_steps=30 format=3 uid="uid://bw45pw4n4vw3"]
 
 [ext_resource type="Texture2D" uid="uid://cem0bqalek6xb" path="res://Player/Player.png" id="1"]
 [ext_resource type="Script" path="res://Player/Player.gd" id="2"]
@@ -10,7 +10,6 @@ height = 10.0
 [sub_resource type="Animation" id="5"]
 resource_name = "IdleDown"
 length = 0.1
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -27,7 +26,6 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="6"]
 resource_name = "IdleLeft"
 length = 0.1
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -44,7 +42,6 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="7"]
 resource_name = "IdleRight"
 length = 0.1
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -61,7 +58,6 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="8"]
 resource_name = "IdleUp"
 length = 0.1
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -143,8 +139,76 @@ tracks/0/keys = {
 "values": [7, 8, 9, 10, 11, 6]
 }
 
+[sub_resource type="Animation" id="Animation_qkap0"]
+resource_name = "AttackDown"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [36, 37, 38, 39]
+}
+
+[sub_resource type="Animation" id="Animation_q7wqy"]
+resource_name = "attack_right"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [24, 25, 26, 27]
+}
+
+[sub_resource type="Animation" id="Animation_ul75f"]
+resource_name = "AttackUp"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [28, 29, 30, 31]
+}
+
+[sub_resource type="Animation" id="Animation_cwbji"]
+resource_name = "AttackLeft"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [32, 33, 34, 35]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_20vpi"]
 _data = {
+"AttackDown": SubResource("Animation_qkap0"),
+"AttackLeft": SubResource("Animation_cwbji"),
+"AttackRight": SubResource("Animation_q7wqy"),
+"AttackUp": SubResource("Animation_ul75f"),
 "IdleDown": SubResource("5"),
 "IdleLeft": SubResource("6"),
 "IdleRight": SubResource("7"),
@@ -227,13 +291,14 @@ script = ExtResource("2")
 position = Vector2(0, -10)
 texture = ExtResource("1")
 hframes = 60
-frame = 18
+frame = 23
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
 shape = SubResource("1")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+audio_max_polyphony = 35
 libraries = {
 "": SubResource("AnimationLibrary_20vpi")
 }
@@ -241,7 +306,6 @@ libraries = {
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_5ohy8")
 anim_player = NodePath("../AnimationPlayer")
-active = true
 parameters/playback = SubResource("AnimationNodeStateMachinePlayback_kng5o")
 parameters/Idle/blend_position = Vector2(-0.00771773, 0.778867)
 parameters/Run/blend_position = Vector2(0.0224183, -0.62549)
