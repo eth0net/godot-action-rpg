@@ -1,19 +1,29 @@
-[gd_scene load_steps=3 format=3 uid="uid://by86cmx4alfeo"]
+[gd_scene load_steps=4 format=3 uid="uid://by86cmx4alfeo"]
 
 [ext_resource type="PackedScene" uid="uid://cowu5m4cgsas" path="res://World/Bush.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://iibh1jo1gilm" path="res://World/GrassBackground.png" id="1_xb7mv"]
 [ext_resource type="PackedScene" uid="uid://bw45pw4n4vw3" path="res://Player/Player.tscn" id="2"]
 
 [node name="World" type="Node2D"]
 y_sort_enabled = true
 
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -1
+texture_repeat = 2
+position = Vector2(160, 90)
+texture = ExtResource("1_xb7mv")
+region_enabled = true
+region_rect = Rect2(0, 0, 320, 180)
+metadata/_edit_lock_ = true
+
 [node name="Player" parent="." instance=ExtResource("2")]
-position = Vector2(160, 72)
+position = Vector2(162, 94)
 
 [node name="Bush" parent="." instance=ExtResource("1")]
-position = Vector2(40, 8)
+position = Vector2(40, 20)
 
 [node name="Bush2" parent="." instance=ExtResource("1")]
-position = Vector2(16, 24)
+position = Vector2(16, 34)
 
 [node name="Bush3" parent="." instance=ExtResource("1")]
 position = Vector2(16, 160)
@@ -22,10 +32,10 @@ position = Vector2(16, 160)
 position = Vector2(40, 168)
 
 [node name="Bush5" parent="." instance=ExtResource("1")]
-position = Vector2(280, 8)
+position = Vector2(280, 20)
 
 [node name="Bush6" parent="." instance=ExtResource("1")]
-position = Vector2(304, 24)
+position = Vector2(304, 36)
 
 [node name="Bush7" parent="." instance=ExtResource("1")]
 position = Vector2(304, 152)
